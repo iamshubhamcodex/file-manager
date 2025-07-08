@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+# File Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and efficient file manager application for organizing, viewing, and managing your files.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse files and folders
+- Search and filter files
+- Rename, move, copy, and delete files
+- Create new folders
+- User-friendly interface
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these steps to set up the project locally:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository:**
+  ```bash
+  git clone https://github.com/iamshubhamcodex/file-manager.git
+  cd file-manager
+  ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies:**
+  ```bash
+  npm install
+  ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. **Start the development server:**
+  ```bash
+  npm run dev
+  ```
+
+This project uses [Vite](https://vitejs.dev/) with [React](https://react.dev/) and [Tailwind CSS](https://tailwindcss.com/) for fast development and modern styling.  
+For production builds, run:
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Folder Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The project is organized as follows:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+file-manager/
+├── src/                # Application source code
+│   ├── components/     # Reusable UI components
+│   ├── utils/          # Utility functions and helpers
+│   ├── assets/         # Images, icons, and static files
+│   └── App.js          # Main application entry point
+├── public/             # Static public files
+├── package.json        # Project metadata and dependencies
+└── README.md           # Project documentation
+```
+
+This structure helps maintain clarity and scalability as the project grows.
+
+## Project Idea & Data Structure
+
+The core idea behind this file manager is to provide a seamless way to organize and interact with files and folders, similar to traditional desktop file explorers. To efficiently represent the hierarchical nature of files and directories, a **tree data structure** is used. Each node in the tree represents either a file or a folder, with folders containing child nodes.
+
+This structure enables intuitive navigation and manipulation of nested directories. When performing operations like search, the application traverses the entire tree to locate matching files or folders. After identifying matches, parent folders are marked or expanded as needed to reveal the search results, ensuring users can quickly find and access relevant items even in deeply nested structures.
