@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  transition: all ease 0.13s;
+  font-family: "Inter", sans-serif; /* Default font for every text*/
+}
+
+:root {
+  /* Variables for Colors */
+  --primaryBackgroundColor: #1f1f1f;
+  --secondaryBackgroundColor: #181818;
+
+  --borderColor: #323232;
+  --borderColorLight: #39393956;
+
+  --primaryTextColor: #ffffff;
+  --subTextColor: #666666;
+
+  /* Variable for Font Sizes */
+  --fs10: 1rem;
+  --fs12: 1.2rem;
+  --fs14: 1.4rem;
+  --fs16: 1.6rem;
+  --fs18: 1.8rem;
+  --fs20: 2rem;
+  --fs22: 2.2rem;
+  --fs26: 2.6rem;
+  --fs30: 3rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; /* 1rem = 10px*/
+  background: var(--primaryBackgroundColor);
+  color: var(--primaryTextColor);
+  letter-spacing: 0.4px;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}

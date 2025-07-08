@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+.fileManagerContainer {
+  --fileManagerWidth: min(32rem, 25vw);
+  --fileManagerPadding: 1.5rem;
+
+  width: var(--fileManagerWidth);
+  border: 1px solid var(--borderColor);
+  height: 100dvh;
+  overflow: auto;
+  background: var(--secondaryBackgroundColor);
+}
+.fileManagerContainer .head {
+  padding: var(--fileManagerPadding);
+}
+.fileManagerContainer .head h1 {
+  font-size: var(--fs12);
+}
+.fileManagerContainer .icons > span {
+  cursor: pointer;
+}
+.fileManagerContainer .filesContainer .fileItem .file {
+  --filePaddingBlock: 0.4rem;
+  --filePaddingInline: calc(2rem + calc(var(--level) * 1.2rem)) 2rem;
+
+  padding-block: var(--filePaddingBlock);
+  padding-inline: var(--filePaddingInline);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.fileManagerContainer .filesContainer .fileItem .file > span {
+  min-width: 1rem;
+}
+.fileManagerContainer .filesContainer .fileItem .file:hover {
+  background-color: #ffffff14;
+}
+.fileManagerContainer .filesContainer .fileItem .file.active {
+  background-color: #ffffff19;
+}
+.fileManagerContainer .filesContainer .fileItem .file.selected,
+.fileManagerContainer .filesContainer .fileItem .file:focus {
+  background-color: #04395e;
+  border: 1px solid #165d91;
+}
+.fileManagerContainer .filesContainer .items {
+  padding-left: calc();
+}
+.fileManagerContainer .filesContainer .file .icons {
+  visibility: hidden;
+  transition: visibility 0.2s ease;
+}
+.fileManagerContainer .filesContainer .file:hover .icons {
+  visibility: visible;
+}
